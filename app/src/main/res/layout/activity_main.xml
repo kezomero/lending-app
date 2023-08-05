@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Hello Farmer, Welcome!"
+            android:textColor="@color/green"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:id="@+id/line"
+        android:layout_marginTop="35dp"
+        android:background="@color/green" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="63dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+         <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+             android:id="@+id/bt"
+                android:orientation="horizontal"
+             android:gravity="center"
+             tools:ignore="MissingConstraints">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Equipments"
+                    android:id="@+id/eq"
+                    android:onClick="hm"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button_background"/>
+             <Button
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Products"
+                 android:textColor="@color/black"
+                 android:onClick="prod"
+                 android:background="@drawable/button_background"/>
+             <Button
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Inputs"
+                 android:onClick="inp"
+                 android:textColor="@color/black"
+                 android:background="@drawable/button_background"/>
+
+
+            </LinearLayout>
+
+        <!-- Equipment Catalog Section -->
+        <LinearLayout
+            android:id="@+id/equip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equipment Catalog:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycle"></androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_below="@+id/equip"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="43dp"
+        android:background="@color/green"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        tools:ignore="NotSibling">
+
+        <LinearLayout
+            android:id="@+id/hm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="hm"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageButton
+                android:id="@+id/button1"
+                android:layout_width="42dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="0dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="hm"
+                android:scaleType="fitXY"
+                android:src="@drawable/home" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:clickable="true"
+                android:onClick="hm"
+                android:text="Home"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="up"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageButton
+                android:id="@+id/button2"
+                android:layout_width="42dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="0dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="up"
+                android:scaleType="fitXY"
+                android:src="@drawable/upload" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="up"
+                android:text="Add"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="od"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageButton
+                android:id="@+id/button3"
+                android:layout_width="42dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="0dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="od"
+                android:scaleType="fitXY"
+                android:src="@drawable/order" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="od"
+                android:text="Order"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="mo"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageButton
+                android:id="@+id/button5"
+                android:layout_width="42dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="0dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="mo"
+                android:scaleType="fitXY"
+                android:src="@drawable/myord" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="mo"
+                android:text="Orders"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:onClick="store">
+
+            <ImageButton
+                android:id="@+id/buttonStore"
+                android:layout_width="42dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/store"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:onClick="store"
+                android:background="@android:color/transparent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Store"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:clickable="true"
+                android:onClick="store"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="ma"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageButton
+                android:id="@+id/button4"
+                android:layout_width="42dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="0dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="ma"
+                android:scaleType="fitXY"
+                android:src="@drawable/me" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="ma"
+                android:text="Profile"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

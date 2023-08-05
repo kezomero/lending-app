@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AgriculturalApplication</string>
+    <string name="title_activity_deliver_now">DeliverNow</string>
+</resources>
